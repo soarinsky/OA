@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/black" >
+
+	<RelativeLayout
+		android:id="@+id/about_us_rlyt_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white" >
+
+		<include
+			layout="@layout/rlyt_title_bar_main" />
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_below="@id/about_us_rlyt_title"
+		android:background="@color/background" >
+
+		<TextView
+			android:id="@+id/about_us_txv_bottom"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="20.0dip"
+			android:gravity="center_horizontal"
+			android:text="@string/about_us_bottom_txt"
+			android:textColor="@color/about_us_bottom_txt"
+			android:textSize="12.0sp"
+			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/about_us_txv_service_qq"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@id/about_us_txv_bottom"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="20.0dip"
+			android:gravity="center_horizontal"
+			android:text="@string/about_us_service_qq_txt"
+			android:textColor="@color/about_us_bottom_txt"
+			android:textSize="12.0sp" />
+
+		<TextView
+			android:id="@+id/about_us_txv_version"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@id/about_us_txv_service_qq"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="4.0dip"
+			android:layout_marginTop="4.0dip"
+			android:gravity="center_horizontal"
+			android:text="@string/about_us_version_txt"
+			android:textColor="@color/about_us_bottom_txt"
+			android:textSize="12.0sp" />
+
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@id/about_us_txv_version"
+			android:layout_centerHorizontal="true"
+			android:src="@drawable/ic_avatar_frame" />
+
+		<ImageView
+			android:id="@+id/about_us_imgv_pic"
+			android:layout_width="300.0dip"
+			android:layout_height="215.0dip"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:layout_margin="10.0dip"
+			android:src="@drawable/ic_avatar_frame" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/about_us_imgv_pic"
+			android:layout_centerHorizontal="true"
+			android:gravity="center_horizontal"
+			android:text="@string/about_us_txt"
+			android:textColor="@color/about_us_center_txt"
+			android:textSize="16.0sp"
+			android:textStyle="bold" />
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/ic_title_shadow" />
+	</RelativeLayout>
+
+</RelativeLayout>

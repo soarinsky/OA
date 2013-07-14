@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+    
+	android:background="@drawable/lstv_item_selector" >
+
+	<TextView
+        android:id="@+id/friend_item_txv_catalog"
+        style="@style/MMListCatalog"
+        android:layout_height="wrap_content"
+        android:paddingRight="4.0dip" />
+	
+	<ImageView
+		android:id="@+id/friend_item_imgv_avatar"
+		android:layout_width="45.0dip"
+		android:layout_height="45.0dip"
+		android:layout_below="@id/friend_item_txv_catalog"
+		android:layout_alignParentLeft="true"
+		android:layout_marginLeft="16.0dip"
+		android:layout_marginRight="8.0dip"
+		android:layout_marginTop="8.0dip"
+		android:layout_marginBottom="8.0dip"
+		android:contentDescription="@string/contentDescription"
+		android:background="@drawable/ic_normal_avatar" />
+
+	<RelativeLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_toRightOf="@id/friend_item_imgv_avatar"
+		android:layout_below="@id/friend_item_txv_catalog" >
+
+		<LinearLayout 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+				
+			<TextView
+				android:id="@+id/friend_item_txv_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="8.0dip"
+				android:layout_marginTop="6.0dip"
+				android:lines="1"
+				android:maxLines="1"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+			
+			<LinearLayout 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+					<TextView
+						android:id="@+id/friend_item_txv_department"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="3.0dip"
+						android:layout_marginLeft="8.0dip"
+						android:lineSpacingExtra="4.0dip"
+						android:lines="1"
+						android:textColor="@color/black"
+						android:textSize="14.0sp" />
+		
+					<TextView
+						android:id="@+id/friend_item_txv_long_phone"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="3.0dip"
+						android:layout_marginLeft="5.0dip"
+						android:lineSpacingExtra="4.0dip"
+						android:lines="1"
+						android:textColor="@color/black"
+						android:textSize="14.0sp" />
+					
+					<TextView
+						android:id="@+id/friend_item_txv_short_phone"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="5.0dip"
+						android:lineSpacingExtra="4.0dip"
+						android:layout_marginBottom="3.0dip"
+						android:lines="1"
+						android:textColor="@color/black"
+						android:textSize="14.0sp" />
+				
+			</LinearLayout>		
+		</LinearLayout>
+		
+	</RelativeLayout>
+
+
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:visibility="visible" >
+
+		<include layout="@+layout/merge_listview_divider" />
+	</RelativeLayout>
+
+</RelativeLayout>

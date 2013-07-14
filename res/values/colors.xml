@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="lucency_black">#00000000</color>
+	<color name="menu_background">#ff343434</color>
+	<color name="menu_item_pressed">#ff202124</color>
+	<color name="menu_divider_1">#ff121212</color>
+	<color name="menu_divider_2">#ff4b4b4b</color>
+	<color name="menu_item_txt">#ffaaaaaa</color>
+	<color name="menu_item_txt_shadow">#ff262626</color>
+	
+	<color name="background">#ffeff3f6</color>
+	<color name="lucency_white">#00ffffff</color>
+	<color name="black">#ff000000</color>
+	<color name="white">#ffffffff</color>
+	
+	<color name="login_or_register_btn_login_text_shadow">#ff0e5da6</color>
+	<color name="login_or_register_btn_text">#ffffffff</color>
+	<color name="title_btn_text_shadow">#ff000000</color>
+	<color name="title_btn_text">#ffffffff</color>
+	<color name="assignment_lstv_divider">#ffd9d0ba</color>
+	<color name="user_avatar_background">#fff5f5f5</color>
+	<color name="about_us_bottom_txt">#ff9b927a</color>
+	<color name="about_us_center_txt">#ff817c6d</color>
+	
+	<color name="listview_divider">#ffd9e3e7</color>
+	<color name="listview_divider2">#ffffffff</color>
+</resources>

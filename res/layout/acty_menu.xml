@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/menu_background" >
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="12dp"
+		android:scrollbars="vertical" >
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical" >
+
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="48.0dip" >
+
+				<Button
+					android:id="@+id/menu_btn_userInfo"
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:background="@drawable/btn_menu_item_selector" />
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:layout_alignTop="@id/menu_btn_userInfo" >
+
+					<ImageView
+						android:id="@+id/menu_imgv_my_avatar"
+						android:layout_width="36.0dip"
+						android:layout_height="36.0dip"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="10.0dip"
+						android:src="@drawable/ic_normal_avatar" />
+
+					<ImageView
+						android:id="@+id/menu_imgv_my_avatar_frame"
+						android:layout_width="40.0dip"
+						android:layout_height="40.0dip"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="8.0dip"
+						android:background="@drawable/ic_menu_avatar_frame"
+						android:visibility="gone"/>
+
+					<TextView
+						android:id="@+id/menu_txv_userInfo"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="60.0dip"
+						android:shadowColor="@color/menu_item_txt_shadow"
+						android:shadowDx="0.0"
+						android:shadowDy="1.0"
+						android:shadowRadius="1.0"
+						android:text="@string/menu_userInfo"
+						android:textColor="@color/menu_item_txt"
+						android:textSize="18.0sp" />
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true" >
+
+					<include layout="@layout/merge_menu_divider" />
+				</LinearLayout>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="48.0dip" >
+
+				<Button
+					android:id="@+id/menu_btn_friend_list"
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:background="@drawable/btn_menu_item_selector" />
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:layout_alignTop="@id/menu_btn_friend_list" >
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="16.0dip"
+						android:src="@drawable/ic_menu_setting" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="60.0dip"
+						android:text="@string/menu_friend_list"
+						android:textColor="@color/menu_item_txt"
+						android:textSize="18.0sp" />
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true" >
+
+					<include layout="@layout/merge_menu_divider" />
+				</LinearLayout>
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="48.0dip" >
+
+				<Button
+					android:id="@+id/menu_btn_about_us"
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:background="@drawable/btn_menu_item_selector" />
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:layout_alignTop="@id/menu_btn_about_us" >
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="16.0dip"
+						android:src="@drawable/ic_menu_setting" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="60.0dip"
+						android:text="@string/menu_about_us"
+						android:textColor="@color/menu_item_txt"
+						android:textSize="18.0sp" />
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true" >
+
+					<include layout="@layout/merge_menu_divider" />
+				</LinearLayout>
+			</RelativeLayout>
+			
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="48.0dip" >
+
+				<Button
+					android:id="@+id/menu_btn_logout"
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:background="@drawable/btn_menu_item_selector" />
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:layout_alignTop="@id/menu_btn_logout" >
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="16.0dip"
+						android:src="@drawable/ic_menu_setting" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="60.0dip"
+						android:text="@string/menu_logout"
+						android:textColor="@color/menu_item_txt"
+						android:textSize="18.0sp" />
+
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true" >
+
+					<include layout="@layout/merge_menu_divider" />
+				</LinearLayout>
+			</RelativeLayout>
+
+
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="48.0dip" >
+
+				<Button
+					android:id="@+id/menu_btn_exit"
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:background="@drawable/btn_menu_item_selector" />
+
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="48.0dip"
+					android:layout_alignTop="@id/menu_btn_exit" >
+
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="16.0dip"
+						android:src="@drawable/ic_menu_exit" />
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerVertical="true"
+						android:layout_marginLeft="60.0dip"
+						android:text="@string/menu_exit"
+						android:textColor="@color/menu_item_txt"
+						android:textSize="18.0sp" />
+				</RelativeLayout>
+
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true" >
+
+					<include layout="@layout/merge_menu_divider" />
+				</LinearLayout>
+			</RelativeLayout>
+		</LinearLayout>
+	</ScrollView>
+
+</RelativeLayout>

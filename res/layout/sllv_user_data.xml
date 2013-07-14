@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sllv_user_data"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/user_avatar_background"
+	android:scrollbars="vertical" >
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical" >
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="80.0dip"
+			android:background="@drawable/ic_textbox_middle" >
+
+			<RelativeLayout
+				android:id="@+id/user_data_rlyt_avatar"
+				android:layout_width="64.0dip"
+				android:layout_height="64.0dip"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="15.0dip"
+				android:layout_marginTop="8.0dip"
+				android:background="@color/user_avatar_background" >
+
+				<include layout="@layout/rlyt_avatar_view" />
+			</RelativeLayout>
+
+			<TextView
+				android:id="@+id/user_data_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15.0dip"
+				android:layout_toRightOf="@id/user_data_rlyt_avatar"
+				android:lineSpacingExtra="4.0dip"
+				android:lines="1"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_id"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="45.0dip"
+				android:layout_toRightOf="@id/user_data_rlyt_avatar"
+				android:lineSpacingExtra="4.0dip"
+				android:lines="1"
+				android:textColor="@color/black"
+				android:textSize="14.0sp" />
+
+			<ImageButton
+				android:id="@+id/user_data_imgbtn_class_schedule"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="8.0dip"
+				android:src="@drawable/ic_course" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_studentID"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_studentID"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_academy"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_academy"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_birthday"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_birthday"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_qq"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_qq"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_email"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_email"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_phone"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_phone"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_department"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_department"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp"
+				tools:ignore="SelectableText" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_place"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_place"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp"/>
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="@drawable/ic_textbox_middle"
+			android:minHeight="48.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="16.0dip"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_data_introduction"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<TextView
+				android:id="@+id/user_data_txv_introduction"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginBottom="2.0dip"
+				android:layout_marginLeft="116.0dip"
+				android:layout_marginRight="16.0dip"
+				android:layout_marginTop="2.0dip"
+				android:textColor="@color/black"
+				android:textSize="18.0sp"/>
+		</RelativeLayout>
+	</LinearLayout>
+
+</ScrollView>

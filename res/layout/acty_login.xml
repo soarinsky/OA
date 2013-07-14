@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/ic_background" >
+
+	<ProgressBar 
+		android:id="@+id/login_progressbar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		style="?android:attr/progressBarStyleLargeInverse"
+		android:layout_centerInParent="true"
+		android:visibility="gone"/>
+	
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dip"
+		android:orientation="vertical" >
+
+		<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:text="精弘网络OA"
+		android:textColor="@color/black"
+		android:textSize="40.0sp"
+		android:layout_marginBottom="40dip" />
+		
+		<RelativeLayout
+			android:id="@+id/user_login_rlyt_account"
+			android:layout_width="fill_parent"
+			android:layout_height="48.0dip"
+			android:layout_marginLeft="15dip"
+			android:layout_marginRight="15dip"
+			android:background="@drawable/bg_search"
+			android:paddingLeft="16.0dip"
+			android:paddingRight="16.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_login_account"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<EditText
+				android:id="@+id/user_login_edt_account"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="100.0dip"
+				android:background="@color/lucency_white"
+				android:hint="@string/user_login_account_tips"
+				android:singleLine="true"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="48.0dip"
+			android:layout_marginLeft="15dip"
+			android:layout_marginRight="15dip"
+			android:background="@drawable/bg_search"
+			android:paddingLeft="16.0dip"
+			android:paddingRight="16.0dip" >
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="12.0dip"
+				android:text="@string/user_login_password"
+				android:textColor="@color/black"
+				android:textSize="18.0sp" />
+
+			<EditText
+				android:id="@+id/user_login_edt_password"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="100.0dip"
+				android:background="@color/lucency_white"
+				android:hint="@string/user_login_password_tips"
+				android:password="true"
+				android:singleLine="true"
+				android:textSize="18.0sp" />
+		</RelativeLayout>
+
+		<Button
+			android:id="@+id/user_btn_login"
+			android:layout_width="260.0dip"
+			android:layout_height="44.0dip"
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="30.0dip"
+			android:background="@drawable/btn_blue_selector"
+			android:shadowColor="@color/login_or_register_btn_login_text_shadow"
+			android:shadowDx="0.0"
+			android:shadowDy="-1.0"
+			android:shadowRadius="1.0"
+			android:text="@string/init_login"
+			android:textColor="@color/login_or_register_btn_text"
+			android:textSize="18.0sp"
+			android:textStyle="normal" />
+
+		<CheckBox 
+			android:id="@+id/user_login_ckb_rememberPassword"
+			android:layout_width="wrap_content"
+			android:layout_height="48.0dip"
+			android:layout_gravity="right|center"
+			android:clickable="true"
+			android:gravity="center_vertical"
+
+			android:paddingRight="16.0dip"
+			android:text="@string/user_login_rememberPassword"
+			android:textColor="@color/black"
+			android:textSize="18.0sp" />
+	</LinearLayout>
+
+
+</RelativeLayout>

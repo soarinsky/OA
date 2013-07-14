@@ -1,0 +1,107 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=9616, tid=9664
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_37-b06
+# Java VM: Java HotSpot(TM) Client VM (20.12-b01 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01309000):  JavaThread "Unknown thread" [_thread_in_vm, id=9664, stack(0x001c0000,0x00210000)]
+
+Stack: [0x001c0000,0x00210000],  sp=0x0020f86c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13471a]
+V  [jvm.dll+0x12f20b]
+V  [jvm.dll+0x167de]
+V  [jvm.dll+0x1802f]
+V  [jvm.dll+0x275a5]
+V  [jvm.dll+0x27de6]
+V  [jvm.dll+0x28195]
+V  [jvm.dll+0x28229]
+V  [jvm.dll+0x282ec]
+V  [jvm.dll+0x2836a]
+V  [jvm.dll+0x2844d]
+V  [jvm.dll+0x28719]
+V  [jvm.dll+0x6ce03]
+V  [jvm.dll+0x6d1dc]
+V  [jvm.dll+0xfa6dc]
+V  [jvm.dll+0x11902b]
+V  [jvm.dll+0x9f4e0]
+C  [javaw.exe+0x1657]
+C  [javaw.exe+0x1e2c]
+C  [javaw.exe+0x8614]
+C  [kernel32.dll+0x4ed6c]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x6377b]  RtlInitializeExceptionChain+0xef
+C  [ntdll.dll+0x6374e]  RtlInitializeExceptionChain+0xc2
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x01309000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=9664, stack(0x001c0000,0x00210000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	D:\java\jre6\bin\javaw.exe
+0x777b0000 - 0x778ec000 	C:\Windows\SYSTEM32\ntdll.dll
+0x77390000 - 0x77464000 	C:\Windows\system32\kernel32.dll
+0x75ba0000 - 0x75beb000 	C:\Windows\system32\KERNELBASE.dll
+0x77920000 - 0x779c0000 	C:\Windows\system32\ADVAPI32.dll
+0x768f0000 - 0x7699c000 	C:\Windows\system32\msvcrt.dll
+0x779c0000 - 0x779d9000 	C:\Windows\SYSTEM32\sechost.dll
+0x775a0000 - 0x77641000 	C:\Windows\system32\RPCRT4.dll
+0x76ec0000 - 0x76f89000 	C:\Windows\system32\USER32.dll
+0x77470000 - 0x774be000 	C:\Windows\system32\GDI32.dll
+0x77900000 - 0x7790a000 	C:\Windows\system32\LPK.dll
+0x76d50000 - 0x76ded000 	C:\Windows\system32\USP10.dll
+0x76c10000 - 0x76c2f000 	C:\Windows\system32\IMM32.DLL
+0x76df0000 - 0x76ebc000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	D:\java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6daa0000 	D:\java\jre6\bin\client\jvm.dll
+0x74240000 - 0x74272000 	C:\Windows\system32\WINMM.dll
+0x75840000 - 0x7588c000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	D:\java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	D:\java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	D:\java\jre6\bin\zip.dll
+0x75c40000 - 0x75c45000 	C:\Windows\system32\PSAPI.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK -Xbootclasspath:D:\java\android\sdk\platforms\android-17\android.jar 
+java_command: com.jh.oa.utils.JsonUtils
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\java\jdk
+CLASSPATH=.;D:\java\jdk\lib;D:\java\jdk\lib\tools.jar
+PATH=D:/java/jre6/bin/client;D:/java/jre6/bin;D:/java/jre6/lib/i386;E:\app\SOAR\product\11.2.0\dbhome_2\bin;C:\Program Files\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Services\IPT\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\Broadcom\WHL\;C:\Program Files\Lenovo\Access Connections\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\java\jdk\bin;D:\java\jdk\jre\bin;D:\SQL\MYSQL\MySQL Server 5.1\bin;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\java\android\sdk\platform-tools;D:\java\android\eclipse;
+USERNAME=SOAR
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 3056880k(1425704k free), swap 6128392k(4112712k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.12-b01) for windows-x86 JRE (1.6.0_37-b06), built on Sep 24 2012 12:44:35 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu Jul 11 19:24:49 2013
+elapsed time: 0 seconds
+

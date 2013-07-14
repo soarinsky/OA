@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/white" >
+	
+	<RelativeLayout
+		android:id="@+id/friend_rlyt_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white" >
+
+		<include
+			layout="@layout/rlyt_title_bar_main" />
+	</RelativeLayout>
+
+	<RelativeLayout
+		android:id="@+id/friend_rlyt_body_search"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/friend_rlyt_title"
+		android:background="@color/white" >
+
+		<include
+			layout="@layout/rlyt_search_bar" />
+	</RelativeLayout>
+
+	<FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/friend_rlyt_body_search"
+        android:orientation="vertical" >
+		
+		<ListView
+			android:id="@+id/friend_lstv" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="@color/white"
+			android:cacheColorHint="@color/white"
+			android:divider="@color/assignment_lstv_divider"
+			android:dividerHeight="2.0px"
+			android:drawSelectorOnTop="false"
+			android:fadingEdge="none" />
+		
+		<TextView
+            android:id="@+id/friend_txv_letter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/show_head_toast_bg"
+            android:gravity="center"
+            android:maxWidth="70dip"
+            android:minWidth="70dip"
+            android:padding="10dip"
+            android:textColor="#99FFFFFF"
+            android:textSize="50sp"
+            android:visibility="gone" />
+        
+		<com.jh.oa.widget.MySideBar
+            android:id="@+id/friend_sideBar"            
+            android:layout_width="30dip" 
+            android:layout_height="fill_parent"
+            android:layout_gravity="right" />
+        
+    </FrameLayout>
+	
+</RelativeLayout>

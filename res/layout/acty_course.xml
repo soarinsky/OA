@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/white" >
+	
+	<RelativeLayout
+		android:id="@+id/course_rlyt_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/white" >
+
+		<include
+			layout="@layout/rlyt_title_bar" />
+	</RelativeLayout>
+	
+	<LinearLayout 
+		android:id="@+id/course_lryt_week"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginLeft="40.0dip"
+		android:layout_marginTop="8dip"
+		android:layout_marginBottom="6dip"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/course_rlyt_title"
+		android:orientation="horizontal">
+		
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_monday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_tuesday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_wendnesday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_thirday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_friday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textSize="16.0dip"
+			android:textColor="@color/black"
+			android:text="@string/course_saturday"
+			/>
+		<TextView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:textColor="@color/black"
+			android:textSize="16.0dip"
+			android:text="@string/course_sunday"
+			/>
+		
+	</LinearLayout>
+	
+	<ImageView 
+		android:id="@+id/course_line"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/course_lryt_week"
+		android:src="@drawable/line"/>
+	
+	<ListView
+			android:id="@+id/course_lstv" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="3dip"
+			android:layout_below="@id/course_line"
+			android:background="@color/white"
+			android:cacheColorHint="@color/white"
+			android:divider="@color/assignment_lstv_divider"
+			android:dividerHeight="2.0px"
+			android:drawSelectorOnTop="false"
+			android:fadingEdge="none" />
+	
+</RelativeLayout>
