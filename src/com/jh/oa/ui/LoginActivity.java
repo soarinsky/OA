@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -40,6 +41,7 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.acty_login);
 		initView();
+//		test();
 	}
 	
 	public void initView(){
@@ -47,6 +49,7 @@ public class LoginActivity extends Activity {
 		edt_password = (EditText) findViewById(R.id.user_login_edt_password);
 		btn_login = (Button) findViewById(R.id.user_btn_login);
 		ckb_remermberPassword =  (CheckBox) findViewById(R.id.user_login_ckb_rememberPassword);
+		ckb_remermberPassword.setChecked(true);
 		
 		btn_login.setOnClickListener(new OnClickListener() {
 			
@@ -105,4 +108,13 @@ public class LoginActivity extends Activity {
 		startActivity(intent);
 		finish();
 	}
+	
+//	public void test(){
+//		StringBuffer sb = new StringBuffer();
+//		for(int i=0; i<100000; i++){
+//			sb.append("0");
+//		}
+////		for(int i=0; i<1000;)
+//		Log.i("test", sb.toString());
+//	}
 }

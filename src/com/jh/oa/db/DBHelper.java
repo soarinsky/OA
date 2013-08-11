@@ -15,12 +15,13 @@ public class DBHelper extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		
+		//建表t_friend  保存好友信息
 		db.execSQL("CREATE TABLE IF NOT EXISTS " +
 				"friends(id integer primary key autoincrement,student_id varchar(20),name vchar(20)," +
 				"department vchar(20),email vchar(30),short_phone vchar(20),long_phone vchar(20)," +
 				"academy vchar(20),campus vchar(20),jh_id vchar(20),sex vchar(20),birthday vchar(20)," +
-				"qq vchar(20),introduction vchar(100),course vchar(100),py vchar(6))");
+				"qq vchar(20),introduction vchar(256),course vchar(100),py vchar(6))");
+		
 	}
 
 	@Override

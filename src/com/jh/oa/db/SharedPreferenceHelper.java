@@ -1,9 +1,14 @@
 package com.jh.oa.db;
 
+import java.util.List;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.jh.oa.beans.Organization;
 import com.jh.oa.beans.UserInfo;
+import com.jh.oa.beans.UserSelfInfo;
+import com.jh.oa.utils.StringUtils;
 
 public class SharedPreferenceHelper {
 	
@@ -25,6 +30,7 @@ public class SharedPreferenceHelper {
 	public static final String STUDENT_ID = "student_id";
 	public static final String SHORT_PHONE =" short_phone";
 	public static final String COURSE = "course";
+	public static final String DEP_CODE = "dep_code";
 	public static final String SPACE = " ";
 	
 	public static final String FRIENDS_EXITS = "friends_exist";
@@ -48,11 +54,28 @@ public class SharedPreferenceHelper {
 		return sharedPreferenceHelper;
 	}
 	
-	public void saveUser(UserInfo user){
+	public void saveUserSelf(UserSelfInfo user){
+		String dep_code = "";
+		String department = "";
+		if(user != null && user.getOrganizations() != null){
+			List<Organization> orgs = user.getOrganizations();
+			for(Organization org: orgs){
+				if(StringUtils.isEmpty(org.getOrganizationTopcode()))
+					dep_code += org.getOrganizationTopcode() + ":";
+				else if(StringUtils.isEmpty(org.getOrganizationCode()))
+					dep_code += org.getOrganizationTopcode() + ":";
+				
+				department += org.getOrganizationName() + ",";
+			}
+			department = department.substring(0, department.length()-1);
+			dep_code = dep_code.substring(0, dep_code.length()-1);
+		}
+		
 		editor.putString(ACADEMY, user.getAcademy());
 		editor.putString(BIRTHDAY, user.getBirthday());
 		editor.putString(CAMPUS, user.getCampus());
-		editor.putString(DEPARTMENT, user.getDepartment());
+		editor.putString(DEPARTMENT, department);
+		editor.putString(DEP_CODE, dep_code);
 		editor.putString(EMAIL, user.getEmail());
 		editor.putString(INTRODUCTION, user.getIntroduction());
 		editor.putString(JH_ID, user.getJhID());
@@ -63,6 +86,9 @@ public class SharedPreferenceHelper {
 		editor.putString(SHORT_PHONE, user.getShortPhoneNumber());
 		editor.putString(STUDENT_ID, user.getStudentID());
 		editor.putString(COURSE, user.getCourse().toString());
+		
+		
+		
 
 		editor.commit();
 	}
@@ -93,6 +119,10 @@ public class SharedPreferenceHelper {
 	
 	public String  getUsername(){
 		return sharedPreferences.getString(USERNAME, SPACE);
+	}
+	
+	public String getDepCode(){
+		return sharedPreferences.getString(DEP_CODE, SPACE);
 	}
 	
 	public String  getPassword(){
@@ -126,7 +156,4 @@ public class SharedPreferenceHelper {
 		editor.commit();
 	}
 	
-	public void updateUser(UserInfo user){
-		saveUser(user);
-	}
 }

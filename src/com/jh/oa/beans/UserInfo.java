@@ -16,23 +16,23 @@ import android.util.Xml;
 public class UserInfo {
 	
 	private static final String UTF8 = "utf8";
-	private int id;
-	private String studentID;
-	private String realName;
-	private String department;
-	private String post;
-	private String py;	
-	private String email;
-	private String shortPhoneNumber;
-	private String longPhoneNumber;
-	private String academy;
-	private String campus;
-	private String jhID;
-	private String sex;
-	private String birthday;
-	private String QQ;
-	private String introduction;
-	private String course;
+	private int id;                           //id主键
+	private String studentID;                 //学号
+	private String realName;                  //姓名
+	private String department;                //部门  --
+	private String post;                      //部门职位
+	private String py;	                      //姓名首字母   排序使用
+	private String email;                     //邮箱
+	private String shortPhoneNumber;          //手机短号
+	private String longPhoneNumber;           //手机长号
+	private String academy;                   //学院
+	private String campus;                    //校区
+	private String jhID;                      //精弘id
+	private String sex;                       //性别
+	private String birthday;                  //生日
+	private String QQ;                        //qq号
+	private String introduction;              //自我简介
+	private String course;                    //空课表字符串    0表示没课，1表示有课
 	
 	public String getStudentID() {
 		return studentID;
@@ -44,6 +44,7 @@ public class UserInfo {
 		return realName;
 	}
 	public void setRealName(String realName) {
+		setPy(PinyinUtils.converterToFirstSpell(realName));
 		this.realName = realName;
 	}
 	public String getEmail() {

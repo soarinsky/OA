@@ -6,7 +6,9 @@ import java.util.List;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import com.jh.oa.beans.FriendBasicInfo;
 import com.jh.oa.beans.UserInfo;
 
 public class FriendsDAO {
@@ -53,6 +55,27 @@ public class FriendsDAO {
 		}
 		cursor.close();
 		db.close();
+		return friends;
+	}
+	
+	public List<FriendBasicInfo> getAllBasicFriends(){
+		SQLiteDatabase  db = dbHelper.getReadableDatabase();
+		Cursor cursor = db.rawQuery("select * from friends order by py ASC", null);
+		List<FriendBasicInfo> friends = new ArrayList<FriendBasicInfo>();
+		while(cursor.moveToNext()){
+			FriendBasicInfo f = new FriendBasicInfo();
+			
+			f.setId(cursor.getInt(cursor.getColumnIndex("id")));
+			f.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+			f.setLongPhoneNumber(cursor.getString(cursor.getColumnIndex("long_phone")));
+			f.setRealName(cursor.getString(cursor.getColumnIndex("name")));
+			f.setShortPhoneNumber(cursor.getString(cursor.getColumnIndex("short_phone")));
+			//Log.i("info:","BasicFriends name "+ f.getRealName());
+			friends.add(f);
+		}
+		cursor.close();
+		db.close();
+		//Log.i("info:","getAllBasicFriends "+friends.size()	);
 		return friends;
 	}
 	
@@ -123,8 +146,11 @@ public class FriendsDAO {
 	public void add(List<UserInfo> friends){
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 		db.beginTransaction();
+		//Log.i("info:","add "+friends.size()	);
+		StringBuffer sb = new StringBuffer();
 		try{
 			for(UserInfo f: friends){
+				sb.append(f.getShortPhoneNumber()+",");
 				db.execSQL("insert into friends(student_id,name,department,email,short_phone,long_phone,academy,campus," +
 						"jh_id,sex,birthday,qq,introduction,course,py) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
 						new Object[]{f.getStudentID(),f.getRealName(),f.getDepartment(),f.getEmail(),f.getShortPhoneNumber(),
@@ -135,6 +161,7 @@ public class FriendsDAO {
 		}finally{
 			db.endTransaction();
 		}
+		//Log.i("info", sb.toString());
 		db.close();
 	}
 	
@@ -181,6 +208,10 @@ public class FriendsDAO {
 	public void deleteAll(){
 		SQLiteDatabase db = dbHelper.getWritableDatabase();
 		db.delete("friends", null, null);
+		//Log.i("info:","deleteAll ");
+		Cursor cursor = db.rawQuery("select * from friends order by py ASC", null);
+		
+		//Log.i("info:","deleteAll cursor count:"+cursor.getCount());
 		db.close();
 	}
 	

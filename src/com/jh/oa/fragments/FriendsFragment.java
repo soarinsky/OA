@@ -26,12 +26,11 @@ import android.widget.Toast;
 
 import com.jh.oa.R;
 import com.jh.oa.adapter.ListViewFriendsAdapter;
-import com.jh.oa.beans.UserInfo;
+import com.jh.oa.beans.FriendBasicInfo;
 import com.jh.oa.db.FriendsDAO;
 import com.jh.oa.db.SharedPreferenceHelper;
 import com.jh.oa.services.LoginService;
 import com.jh.oa.ui.FriendDetailActivity;
-import com.jh.oa.ui.LoginActivity;
 import com.jh.oa.utils.NetworkUtils;
 import com.jh.oa.utils.StringUtils;
 import com.jh.oa.widget.MySideBar;
@@ -41,6 +40,7 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 
 	private ImageButton imgbtn_left;
 	private ImageButton imgbtn_right;
+	private ImageButton imgbtn_search_right;
 	private TextView txv_title;
 	
 	private ProgressDialog progressDialog; 
@@ -51,8 +51,9 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 	private EditText edt_search;
 	private ListView lsv_friend;
 	
-	private List<UserInfo> users;
-	private List<UserInfo> results; 
+	private List<FriendBasicInfo> basicInfofriends;
+	private List<FriendBasicInfo> results; 
+	
 	// listView右边的导航选项卡
 	private MySideBar sideBar;
 	private ListViewFriendsAdapter adapter;
@@ -80,6 +81,7 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 		
 		imgbtn_left = (ImageButton) v.findViewById(R.id.title_imgbtn_left);
 		imgbtn_right = (ImageButton) v.findViewById(R.id.title_imgbtn_right);
+		imgbtn_search_right = (ImageButton) v.findViewById(R.id.rlyt_search_imgbtn_right);
 		imgbtn_right.setVisibility(View.VISIBLE);
 		txv_title = (TextView) v.findViewById(R.id.title_txv_title_main);
 		txv_title.setText(R.string.menu_friend_list);
@@ -91,11 +93,11 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 		sideBar = (MySideBar) v.findViewById(R.id.friend_sideBar);
 		
 		initFriendsData();
-//		Collections.sort(users, new PinyinComparator());
-//		Log.i("info", users.size() + users.get(0).getRealName());
-		adapter = new ListViewFriendsAdapter(getActivity(), users);
+//		Collections.sort(basicInfofriends, new PinyinComparator());
+		adapter = new ListViewFriendsAdapter(getActivity(), basicInfofriends);
 
 		lsv_friend.setAdapter(adapter);
+		
 		edt_search.addTextChangedListener(new TextWatcher(){
 	        public void afterTextChanged(Editable s) {
 	        	results = null;
@@ -103,12 +105,13 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 //	        	Log.i("search", search);
 	        	if(StringUtils.isEmpty(search)){
 	        		lsv_friend.setAdapter(adapter);
-	        		setListViewListener(users);
+	        		setListViewListener(basicInfofriends);
 	        		sideBar.setVisibility(View.VISIBLE);
 	        		return;
 	        	}
-	        	results = new ArrayList<UserInfo>();
-	        	for(UserInfo user: users){
+	        	imgbtn_search_right.setVisibility(View.VISIBLE);
+	        	results = new ArrayList<FriendBasicInfo>();
+	        	for(FriendBasicInfo user: basicInfofriends){
 	        		if(user.getRealName().indexOf(search)>=0){
 	        			Log.i("search", user.getRealName());
 	        			results.add(user);
@@ -125,11 +128,12 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 		
 		imgbtn_left.setOnClickListener(this);
 		imgbtn_right.setOnClickListener(this);
+		imgbtn_search_right.setOnClickListener(this);
 		sideBar.setOnTouchingLetterChangedListener(this);
-		setListViewListener(users);
+		setListViewListener(basicInfofriends);
 	}
 	
-	private void setListViewListener(final List<UserInfo> datas){
+	private void setListViewListener(final List<FriendBasicInfo> datas){
 		lsv_friend.setOnItemClickListener((new OnItemClickListener() {  
             public void onItemClick(AdapterView<?> parent, View view,  
                     int position, long id) {  
@@ -143,7 +147,7 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 	
 	public void initFriendsData(){
 		if(sharedPreferenceHelper.isFriendsExist()){
-			users = friendDao.getAllFriends();
+			basicInfofriends = friendDao.getAllBasicFriends();
 		}
 		
 	}
@@ -154,6 +158,10 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 		
 		case R.id.title_imgbtn_left:
 				toggle();break;
+		case R.id.rlyt_search_imgbtn_right:
+			edt_search.setText(null);
+			imgbtn_search_right.setVisibility(View.GONE);
+			break;
 		case R.id.title_imgbtn_right:
 			if(!NetworkUtils.isNetWorkValiable(getActivity())){
 				Toast.makeText(getActivity(), "网络未连接！请连接后再试！", Toast.LENGTH_SHORT).show();
@@ -188,9 +196,9 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 	
 	private void refreshListView(){
 		initFriendsData();
-		adapter = new ListViewFriendsAdapter(getActivity(), users);
+		adapter = new ListViewFriendsAdapter(getActivity(), basicInfofriends);
 		lsv_friend.setAdapter(adapter);
-		setListViewListener(users);
+		setListViewListener(basicInfofriends);
 	}
 	
 	@Override
@@ -213,9 +221,9 @@ public class FriendsFragment extends BaseFragment implements OnTouchingLetterCha
 	
 	public int alphaIndexer(String s) {
 		int position = 0;
-		for (int i = 0; i < users.size(); i++) {
+		for (int i = 0; i < basicInfofriends.size(); i++) {
 
-			if (users.get(i).getPy().startsWith(s)) {
+			if (basicInfofriends.get(i).getPy().startsWith(s)) {
 				position = i;
 				break;
 			}

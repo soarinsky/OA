@@ -4,10 +4,14 @@ import com.jh.oa.utils.StringUtils;
 
 public class CourseInfo {
 
+	//一周天数
 	public static final int DAYS_EVERYWEEK = 7;
+	//一天课的节数
 	public static final int LESSONS_EVERYDAY = 11;
 	
-	private String courseStr;
+	//课程字符串 
+	private String courseStr;   
+	//一周空课表数组
 	boolean courses[][] = new boolean[LESSONS_EVERYDAY][DAYS_EVERYWEEK];
 	
 	public CourseInfo(String courseinfo){

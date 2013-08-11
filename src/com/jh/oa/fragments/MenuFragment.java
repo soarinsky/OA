@@ -77,7 +77,7 @@ public class MenuFragment extends BaseFragment{
 			preferenceHelper.setFriendsExist(false);
 			preferenceHelper.setUserExist(false);
 			friendDao.deleteAll();
-			
+			finish();
 			Intent i = new Intent(getActivity(),LoginActivity.class);
 			getActivity().startActivity(i);
 			break;

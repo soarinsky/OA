@@ -110,7 +110,7 @@ public class HttpDownloader {
 		return inputStream;
 	}
 	
-	public InputStream getInputStreamFromUrl(String urlStr, String username, String password, String type) 
+	public InputStream getInputStreamFromUrl(String urlStr, String username, String password, int type) 
 			throws MalformedURLException, IOException {
 		url = new URL(urlStr);
 		HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
@@ -120,14 +120,30 @@ public class HttpDownloader {
 		PrintWriter out = new PrintWriter(urlConn.getOutputStream());
 		String _account = "stu_no=" + URLEncoder.encode(username,"UTF-8");
 		String _passwd = "stu_password=" + URLEncoder.encode(password,"UTF-8");
-		String _type = "type=" + URLEncoder.encode(type,"UTF-8");
+		String _type = "type=" + type;
 		out.print(_account + "&" + _passwd + "&" + _type );
 		out.close();
 		InputStream inputStream = urlConn.getInputStream();
 		return inputStream;
 	}
 	
-	public InputStream getInputStreamFromUrl(String urlStr, String username, String type) 
+//	public InputStream getInputStreamFromUrl(String urlStr, String username, String type) 
+//			throws MalformedURLException, IOException {
+//		url = new URL(urlStr);
+//		HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
+//		urlConn.setConnectTimeout(5000);
+//		urlConn.setRequestMethod("POST");
+//		urlConn.setDoOutput(true);
+//		PrintWriter out = new PrintWriter(urlConn.getOutputStream());
+//		String _account = "stu_no=" + URLEncoder.encode(username,"UTF-8");
+//		String _type = "type=" + type;
+//		out.print(_account + "&" + _type );
+//		out.close();
+//		InputStream inputStream = urlConn.getInputStream();
+//		return inputStream;
+//	}
+	
+	public InputStream getInputStreamFromUrl(String urlStr, int pageNo, int pageSize, String depcode) 
 			throws MalformedURLException, IOException {
 		url = new URL(urlStr);
 		HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
@@ -135,9 +151,11 @@ public class HttpDownloader {
 		urlConn.setRequestMethod("POST");
 		urlConn.setDoOutput(true);
 		PrintWriter out = new PrintWriter(urlConn.getOutputStream());
-		String _account = "stu_no=" + URLEncoder.encode(username,"UTF-8");
-		String _type = "type=" + URLEncoder.encode(type,"UTF-8");
-		out.print(_account + "&" + _type );
+		String _pageNo = "pageNo=" + pageNo;
+		String _pageSize = "pageSize=" + pageSize;
+		String _depcode = "code=" + URLEncoder.encode(depcode,"UTF-8");
+//		String _type = "type=" + type;
+		out.print(_pageNo + "&" + _pageSize + "&" + _depcode);
 		out.close();
 		InputStream inputStream = urlConn.getInputStream();
 		return inputStream;

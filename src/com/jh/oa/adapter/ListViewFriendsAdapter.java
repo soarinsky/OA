@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jh.oa.R;
+import com.jh.oa.beans.FriendBasicInfo;
 import com.jh.oa.beans.UserInfo;
 import com.jh.oa.utils.PinyinUtils;
 import com.jh.oa.utils.StringUtils;
@@ -20,7 +21,7 @@ import com.jh.oa.utils.SysIntentUtils;
 public class ListViewFriendsAdapter extends BaseAdapter{
 
 	private Context 					context;//运行上下文
-	private List<UserInfo> 				listItems;//数据集合
+	private List<FriendBasicInfo> 				listItems;//数据集合
 	private LayoutInflater 				listContainer;//视图容器
 	private int 						itemViewResource;//自定义项视图源
 	private boolean                     isCatalogVisible = true;
@@ -34,16 +35,16 @@ public class ListViewFriendsAdapter extends BaseAdapter{
 		    public TextView catalog;
 	 }  
 	
-	public ListViewFriendsAdapter(Context context, List<UserInfo> userInfos){
+	public ListViewFriendsAdapter(Context context, List<FriendBasicInfo> userInfos){
 		this(context, userInfos, R.layout.lstv_item_friend);
 	}
 	
-	public ListViewFriendsAdapter(Context context, List<UserInfo> userInfos, boolean catalogVisble){
+	public ListViewFriendsAdapter(Context context, List<FriendBasicInfo> userInfos, boolean catalogVisble){
 		this(context, userInfos, R.layout.lstv_item_friend);
 		isCatalogVisible = catalogVisble;
 	}
 
-	public ListViewFriendsAdapter(Context context, List<UserInfo> userInfos, int resource){
+	public ListViewFriendsAdapter(Context context, List<FriendBasicInfo> userInfos, int resource){
 		this.context = context;
 		this.itemViewResource = resource;
 		this.listContainer = LayoutInflater.from(context);
@@ -109,7 +110,7 @@ public class ListViewFriendsAdapter extends BaseAdapter{
 			listItemView.catalog.setVisibility(View.GONE);
 		}
 		
-		UserInfo user = listItems.get(position);
+		FriendBasicInfo user = listItems.get(position);
 		listItemView.department.setText(user.getDepartment());
 		listItemView.longPhoneNumber.setText(user.getLongPhoneNumber());
 		listItemView.name.setText(user.getRealName());
